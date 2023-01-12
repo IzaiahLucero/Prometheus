@@ -25,3 +25,4 @@ dist-ssr
 *.sw?
 
 setupProxy.js
+/package-lock.json
