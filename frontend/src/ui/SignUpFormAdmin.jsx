@@ -41,7 +41,7 @@ export const SignUpFormAdmin = () => {
           }
           setStatus({message, type});
         }
-      );
+        );
   };
 
   return (
@@ -169,9 +169,6 @@ function  SignUpFormContent(props){
         </Form.Group>
       </Form>
       <DisplayStatus status={status} />
-
     </>
-
-
   )
 }

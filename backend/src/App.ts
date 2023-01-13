@@ -7,6 +7,7 @@ import { createClient } from 'redis'
 import RedisConnect from 'connect-redis'
 import {signInAdminRoute} from "./apis/sign-in-admin/sign-in-admin.route";
 import {signUpAdminRoute} from "./apis/sign-up-admin/sign-up-admin.route";
+import customerRoute from "./apis/customer/customer.route";
 
 
 
@@ -54,6 +55,8 @@ export class App {
         this.app.use('/apis', indexRoute)
         this.app.use('/apis/sign-in-admin', signInAdminRoute)
         this.app.use('/apis/sign-up-admin', signUpAdminRoute)
+        this.app.use('/apis/customer', customerRoute)
+
     }
 
     // starts the server and tells the terminal to post a message that the server is running and on what port

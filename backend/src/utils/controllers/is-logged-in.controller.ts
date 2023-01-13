@@ -2,15 +2,15 @@ import { NextFunction, Request, Response } from 'express'
 import { verify, VerifyErrors } from 'jsonwebtoken'
 import { Status } from '../interfaces/Status'
 import { IncomingHttpHeaders } from 'http'
-import { Owner } from '../models/Owner'
+import { Admin } from '../models/Admin'
 import {Customer} from "../models/Customer";
 
-export function isLoggedIn (userType: 'owner' | 'customer'): any {
+export function isLoggedIn(userType: 'admin'){
     return function (request: Request, response: Response, next: NextFunction): any {
         const status: Status = { status: 400, message: 'Please login', data: null }
-        const sessionProfile = (request: Request): Owner | Customer | undefined => request.session[userType] ?? undefined
+        const sessionProfile = (request: Request): Admin | undefined => request.session['admin'] ?? undefined
         const signature = (request: Request): string => request.session?.signature ?? 'no signature'
-        const isSessionActive = (isProfileActive: Owner | Customer | undefined): boolean => (isProfileActive !== undefined)
+        const isSessionActive = (isProfileActive: Admin | undefined): boolean => (isProfileActive !== undefined)
         const getJwtTokenFromHeader = (headers: IncomingHttpHeaders): string | undefined => {
             return headers.authorization
         }

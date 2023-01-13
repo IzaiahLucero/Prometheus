@@ -9,6 +9,7 @@ import { Dashboard } from './Dashboard.jsx'
 import { SignInPage } from './SignInPage.jsx'
 import { SignUpPage } from './SignUpPage.jsx'
 import './App.css'
+import {Customers} from "./Customers.jsx";
 
 
 export function App({store}) {
@@ -22,6 +23,7 @@ export function App({store}) {
                         <Route path={"/sign-up"} element={<SignUpPage />} />
                         <Route path={"/sign-in"} element={<SignInPage />} />
                         <Route path={"/dashboard"} element={<Dashboard />} />
+                        <Route path={"/customers"} element={<Customers />} />
                     </Routes>
                 </BrowserRouter>
             </Provider>

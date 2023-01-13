@@ -9,6 +9,7 @@ export function NavigationMenu () {
               <Navbar.Brand href="/">Sample Program</Navbar.Brand>
               <Nav className="justify-content-end flex-grow-1">
                 <Nav.Link href="sign-in">Sign In</Nav.Link>
+                  <Nav.Link href="customers">Customers</Nav.Link>
               </Nav>
           </Navbar>
         </Row>
